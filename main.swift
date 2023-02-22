@@ -1,3 +1,1 @@
-//print("Farzana")
-
-print("Hello World!!")
+print("Farzana")
