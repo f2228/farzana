@@ -1,25 +1,22 @@
-// Function to solve quadratic equation and return roots
-func solveQuadraticEquation(a: Double, b: Double, c: Double) -> (Double, Double)? {
-    let delta = b * b - 4 * a * c
-    
-    if delta < 0 {
-        // The roots are imaginary
-        return nil
-    } else {
-        let root1 = (-b + sqrt(delta)) / (2 * a)
-        let root2 = (-b - sqrt(delta)) / (2 * a)
-        return (root1, root2)
-    }
+let usdToEur: Double = 1.22
+let usdToGbp: Double = 1.42
+let usdToJpy: Double = 0.0091
+
+var totalUsd: Double = 0.0
+
+print("Enter amount of EUR:")
+if let eur = readLine(), let eurAmount = Double(eur) {
+    totalUsd += eurAmount * usdToEur
 }
 
-// Sample inputs
-let a = 2.0
-let b = 5.0
-let c = 2.0
-
-// Solve the quadratic equation
-if let (root1, root2) = solveQuadraticEquation(a: a, b: b, c: c) {
-    print("The roots of the quadratic equation \(a)x² + \(b)x + \(c) = 0 are: x₁ = \(root1), x₂ = \(root2)")
-} else {
-    print("The quadratic equation \(a)x² + \(b)x + \(c) = 0 has no real roots")
+print("Enter amount of GBP:")
+if let gbp = readLine(), let gbpAmount = Double(gbp) {
+    totalUsd += gbpAmount * usdToGbp
 }
+
+print("Enter amount of JPY:")
+if let jpy = readLine(), let jpyAmount = Double(jpy) {
+    totalUsd += jpyAmount * usdToJpy
+}
+
+print("Total USD: $\(totalUsd)")
