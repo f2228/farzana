@@ -1,0 +1,7 @@
+let inputString = "This is a sample string"
+let formattedString = inputString.lowercased().map { String($0) }.joined(separator: " ")
+    .split(separator: " ")
+    .map { String(repeating: " ", count: 3) + $0 }
+    .joined(separator: "")
+
+print(formattedString)
