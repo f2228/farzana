@@ -1,0 +1,25 @@
+func playRPS() {
+    // array of possible moves
+    let moves = ["rock", "paper", "scissors"]
+    
+    // randomly choose computer's move
+    let computerMove = moves.randomElement()!
+    
+    // prompt user for their move
+    print("Enter your move (rock, paper, or scissors):")
+    let playerMove = readLine()!
+    
+    // determine winner
+    if playerMove == computerMove {
+        print("Tie!")
+    } else if playerMove == "rock" && computerMove == "scissors" ||
+                playerMove == "scissors" && computerMove == "paper" ||
+                playerMove == "paper" && computerMove == "rock" {
+        print("You win! \(playerMove) beats \(computerMove).")
+    } else {
+        print("You lose! \(computerMove) beats \(playerMove).")
+    }
+}
+
+// play the game
+playRPS()
